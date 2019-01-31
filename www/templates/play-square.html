@@ -1,0 +1,19 @@
+<div class="play-square">
+    <div id="player-box" class="player-box">
+        <div class="player-bg" ng-style="{'background':'url('+artworksPath + player.playlist[player.playlistIndex].artwork+')'}"></div>
+
+        <div class="detail-header player-card">
+            <div class="player-artwork">
+                <img class="player-img-artwork" ng-src="'+artworksPath + player.playlist[player.playlistIndex].artwork+'" />
+            </div>
+            <div class=" player-title">
+                <h4>{{player.playlist[player.playlistIndex].artist}}</h4>
+                <p>{{player.playlist[player.playlistIndex].name}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="range">
+        <input seeker-Slider type="range" name="volume" min="0" max={{duration}} ng-model=position ng-change="stateChanged()" />
+    </div>
+</div>

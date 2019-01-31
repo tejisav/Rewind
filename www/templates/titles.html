@@ -1,0 +1,40 @@
+<play-bar></play-bar>
+<ion-view view-title="Titles">
+  <ion-header-bar align-title="center" class="transparent">
+    <div class="buttons">
+      <button class="button icon ion-android-arrow-back button-clear button-light" ng-click="$ionicGoBack()"></button>
+    </div>
+    <h1 class="title"></h1>
+    <div class="buttons">
+      <button class="button icon ion-android-search button-clear button-light" ui-sref="search"></button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="has-no-header" scroll="true" has-bouncing="true">
+    <div class="detail-box">
+      <div class="spacer-mid"></div>
+      <div class="detail-header">
+        <img src="{{artistArtworkUrl}}" style="width: 100px; height: auto">
+        <h4>{{artistName}}</h4>
+      </div>
+    </div>
+
+
+    <div class="list">
+      <div collection-repeat="title in titles" item-height="title.isSeparator ? 37 : 59">
+        <div ng-if="!title.isSeparator" class="item item-song one-line" ng-click="playTitle(title)">
+          <img ng-src="{{::miniaturesPath}}{{title.artwork}}" />
+          <h2>{{title.name}}</h2>
+
+          <button class="button button-icon ion-more" ng-click="showPopover($event,title)"></button>
+
+        </div>
+
+        <div ng-if="title.isSeparator" class="item item-divider album-header">
+          <h2>{{title.name}}</h2>
+        </div>
+
+      </div>
+    </div>
+    <div style="height: 350px"></div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,444 @@
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+$z-index-tabs : 10;
+
+@import "www/lib/ionic/scss/ionic";
+
+*{
+    box-shadow : none !important;
+}
+
+// Colors
+.pink{
+    color : #E12F56 !important;
+}
+.dark{
+    color : $dark !important;
+}
+
+// popover height fits content
+ion-popover-view.fit {
+    height: auto !important;
+}
+
+ion-popover-view.fit ion-content {
+    position: relative !important;
+}
+
+.platform-android ion-popover-view.fit {
+    margin-top: 10px !important;
+}
+
+.popover-item{
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.popover-button{
+    width     : 100%;
+    font-size : 18px;
+}
+
+.has-tabs{
+    bottom: ($tabs-height + 50px) !important;
+}
+
+// Items
+.item-song,
+.item-song .item-content,
+.item-song-left,
+.item-song-left .item-content {
+    padding-left   : 70px;
+    padding-right   : 70px;
+    height         : 60px;
+
+    > img:first-child,
+    .item-image {
+        position   : absolute;
+        top        : 10px;
+        left       : 10px;
+        max-width  : 50px;
+        max-height : 50px;
+        width      : 100%;
+        height     : 100%;
+    }
+
+    button{
+        font-size : 20px;
+        color     : $dark;
+        position: absolute;
+        right: 25px;
+        top : 12px;
+    }
+}
+.item-song.two-lines{
+    padding-top: 10px;
+}
+.item-song.one-line{
+    padding-top: 27px;
+}
+.album-header{
+    font-size: 20px;
+}
+
+// Playlists
+
+// Special playlist grid
+.special-playlists{
+    z-index     : 2;
+    position    : relative;
+    padding-top : 50% + 2 * 2%;
+    height      : 0;
+    width       : 100%;
+    .special-playlist-box{
+        position: absolute;
+    }
+    .box-top{
+        top : 2 * 2%;
+        bottom : (50% + 2%);
+    }
+    .box-bottom{
+        bottom : 2 * 2%;
+        top : (50% + 2%);
+    }
+    .box-left{
+        left : 2%;
+        right : (50% + (2% / 2));
+    }
+    .box-right{
+        right : 2%;
+        left : (50% + (2% / 2));
+    }
+}
+
+// User playlists
+.user-playlists{
+    // position    : absolute;
+    // top         : 0;
+    // bottom      : 0;
+    width       : 100%;
+    // padding-top : 50% + 2 * 2%;
+    .container{
+        position : relative;
+        height   : 100%;
+        width    : 100%;
+        .new-playlist-button{
+            position      : absolute;
+            top           : 0;
+            margin-bottom : 0;
+            margin-top    : 0;
+            z-index       : 2;
+        }
+        .item-image{
+            .miniature{
+                position : absolute;
+                width  : ( $item-thumbnail-width / 2 ) !important;
+                height : ( $item-thumbnail-height / 2 ) !important;
+            }
+            .top-left{
+                top        : 0;
+                left       : 0;
+            }
+            .top-right{
+                top  : 0;
+                left : ( $item-thumbnail-width / 2 ) !important;
+            }
+            .bottom-left{
+                top  : ( $item-thumbnail-height / 2 ) !important;
+                left : 0;
+            }
+            .bottom-right{
+                top  : ( $item-thumbnail-height / 2 ) !important;
+                left : ( $item-thumbnail-width / 2 ) !important;
+            }
+        }
+        .user-playlists-scroll{
+            position : absolute;
+            top      : ( 5px +  $button-height );
+            bottom   : 0;
+            left     : 0;
+            right    : 0;
+        }
+    }
+}
+
+// Play Bar
+play-bar{
+    position     : absolute;
+    bottom       : $tabs-height;
+    height       : 50px;
+    z-index      : 10;
+    display      : table;
+    table-layout : fixed;
+    background-color: white;
+    width :100%;
+
+    .image{
+        position      : absolute;
+        top           : ((50px - 40px) / 2);
+        left          : 15px;
+        width         : 40px;
+        height        : 40px;
+        border-radius : ( 40px / 2 );
+        display       : table;
+        table-layout  : fixed;
+        .icon{
+            text-shadow    : 0 0 1px black;
+            font-size      : 25px;
+            text-align     : center;
+            vertical-align : middle;
+            display        : table-cell;
+            color          : white;
+        }
+    }
+    .song{
+        width          : 100%;
+        padding-left   : (40px + 2 * 15px);
+        padding-right  : 110px;
+        vertical-align : middle;
+        display        : table-cell;
+        line-height    : 16px;
+        overflow       : hidden;
+        text-overflow  : ellipsis;
+        white-space    : nowrap;
+        .title{
+            font-size: 16px;
+        }
+        .artist{
+            color: $dark;
+        }
+    }
+    .like{
+        position  : absolute;
+        right     : (70px);
+        top       : 12px;
+        font-size : 30px;
+    }
+    .button{
+        position  : absolute;
+        right     : ( 15px );
+        top       : 5px;
+        font-size : 30px;
+        color     : $dark;
+    }
+
+}
+
+// artwork-mosaic
+.artwork-mosaic{
+    width        : 100%;
+    height       : 100%;
+    line-height  : 0px;
+    position     : relative;
+    .miniature{
+        display : inline-block;
+        width   : 25%;
+        height  : 50%;
+        padding : 0;
+        margin  : 0;
+    }
+    .title{
+        position      : absolute;
+        top           : 40%;
+        font-size     : 20px;
+        text-align    : center;
+        color         : #E12F56;
+        background    : url("../img/blur.png") top left repeat;
+        width         : 100%;
+        line-height   : 20px;
+        white-space   : nowrap;
+        overflow      : hidden;
+        padding-left  : 2px;
+        padding-right : 2px;
+        padding-bottom: 2px;
+
+    }
+}
+
+
+// Playlist Bar
+.playlist-bar{
+    padding     : 0;
+    position    : absolute;
+    bottom      : 0px;
+    height      : ( 100px ) !important;
+    width       : 100%;
+    z-index     : 2;
+    border-top  : solid 1px #b2b2b2;
+    overflow    : hidden;
+
+    .card{
+        width          : 100px !important;
+        height         : 100px !important;
+        overflow       : hidden;
+        display        : inline-block;
+        padding: 5px;
+        margin         : 0;
+
+        .image{
+            position: relative;
+            width  : (100px - 2 * 5px) !important;
+            height : (100px - 2 * 5px) !important;
+            .blur{
+                width : 100%;
+                height :100%;
+                background : url("../img/flou4.png") top right repeat;
+            }
+        }
+        .song-title{
+            position       : absolute;
+            top            : 5px;
+            left           : 0;
+            color          : #E12F56;
+            background     : url("../img/blur.png") top left repeat;
+            max-width      : 100%;
+            height         : (4 * 5px);
+            width          : (100px - 2 * 5px);
+            overflow       : hidden;
+            text-overflow  : ellipsis;
+            white-space    : nowrap;
+        }
+    }
+}
+
+
+// Play-Square
+.play-square{
+    position:relative;
+    z-index : 2;
+
+    .artwork{
+        padding-top: 100%;
+    }
+    .title{
+        letter-spacing : -1px;
+        position       : absolute;
+        top            : 15px;
+        left           : 0;
+        font-size      : 36px;
+        padding-bottom : 4px;
+        line-height    : (35px - 2px);
+        background     : url("../img/blur.png") top left repeat;
+        white-space    : nowrap;
+        text-overflow  : ellipsis;
+        overflow       : hidden;
+        max-width      : 100%;
+		.song{
+			color : #E12F56;
+		}
+		.artist{
+			color : black;
+		}
+    }
+    .blur{
+        background : url("../img/flou4.png") top right repeat;
+        height     : 100%;
+        position   : absolute;
+        top        : 0;
+        right      : 0;
+    }
+    .time{
+        position    : absolute;
+        color       : white;
+        opacity     : 0.7;
+        bottom      : 3px;
+        font-size   : 30px;
+        text-shadow : 0 0 1px black;
+    }
+    .current-time{
+        @extend .time;
+        left :3px;
+    }
+    .total-duration{
+        @extend .time;
+        right :3px;
+    }
+}
+
+
+// Music Player
+#player{
+    color: $dark;
+
+    button{
+        font-size : 35px;
+    }
+    .controls{
+        z-index : 1;
+        position       : absolute;
+        top            : 0;
+        bottom         : 0;
+        padding-top    : 100%;
+        padding-bottom : 100px;
+        width          : 100%;
+        .vertical-centering-container{
+            position     : relative;
+            height       : 100%;
+            width        : 100%;
+            display      : table;
+            table-layout : fixed;
+            .vertical-centering-content{
+                position       : relative;
+                vertical-align : middle;
+                display        : table-cell;
+                width          : 100%;
+                .control-bar{
+                    position : relative;
+                    width    : 100%;
+                }
+
+            }
+
+        }
+        .shuffle{
+            position  : absolute;
+            top       : 0px;
+            right     : 10px;
+            font-size : 25px;
+        }
+        .loop{
+            position  : absolute;
+            top       : 0px;
+            left      : 10px;
+            font-size : 25px;
+        }
+        .like{
+            position  : absolute;
+            right     : 14px;
+            top       : 12px;
+            font-size : 30px;
+        }
+        .control-box{
+            position : relative;
+            margin   : auto;
+            height   : 40px;
+            width    : 200px;
+            .play{
+                position  : absolute;
+                top       : 0;
+                left      : 89px;
+                font-size : 40px;
+            }
+            .pause{
+                position  : absolute;
+                top       : 0;
+                left      : 85px;
+                font-size : 40px;
+            }
+            .forward{
+                position  : absolute;
+                top       : 0px;
+                right      : 0px;
+                font-size : 40px;
+            }
+            .backward{
+                position  : absolute;
+                top       : 0px;
+                left      : 0;
+                font-size : 40px;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,307 @@
+.button:hover {
+  color: white;
+}
+
+play-bar {
+  position: absolute;
+  bottom: 0px !important;
+  height: 50px !important;
+  z-index: 10;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+play-bar .image {
+  position: none !important;
+  top: 0px !important;
+  left: 0px !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 0px !important;
+  display: table;
+  table-layout: fixed;
+}
+
+play-bar .button {
+  color: white !important;
+}
+
+.bar.bar-positive {
+  background-image: none !important;
+  border: none !important;
+  background-color:#3c464e !important;
+}
+
+.tabs-positive > .tabs, .tabs.tabs-positive {
+  background-color: #3c464e !important;
+  border-color: #3c464e !important;
+  height: 55px !important;
+}
+.tabs-striped .tabs {
+  border-color: transparent !important;
+}
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+  color: white !important;
+}
+.tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
+  margin-top: 1px !important;
+  border-width: 0px 0px 3px 0px !important;
+  border-style: solid !important;
+}
+.darktheme .pane, .darktheme .view {
+  background-color: #212121;
+}
+.darktheme .modal {
+  background-color: rgba(0, 0, 0, 0.92);
+}
+.darktheme .modal-backdrop-bg {
+  background-color: #36465d;
+  opacity: 0;
+}
+.darktheme .item:first-child{
+  border-top: none !important;
+}
+.darktheme .item, .darktheme .item-complex .item-content {
+  background: #212121;
+  color: white;
+  text-align: left;
+  border-color: #607D8B;
+}
+.darktheme .categories .item {
+  text-align: center !important;
+}
+.darktheme .item *, .darktheme .item-complex .item-content * {
+  color: white;
+}
+.darktheme .card .item, .darktheme .item.item-input {
+  background-color: white;
+  color: #444;
+}
+.darktheme .popover-button {
+  color: #eeeeee;
+}
+.darktheme play-bar {
+  background-color: #3c464e !important;
+}
+.darktheme .popover-item {
+  background: #212121 !important;
+  color: white !important;
+  border-color: #212121 !important;
+}
+.darktheme play-bar .song .title {
+  font-size: 16px;
+  color: white !important;
+}
+.darktheme play-bar .song .artist {
+  color: white !important;
+}
+.spacer-mid{
+  margin:30px;
+}
+.item-song, .item-song .item-content, .item-song-left, .item-song-left .item-content {
+  height: 70px !important;
+}
+.bar-header {
+  border: 0px !important;
+  border-bottom-color: transparent !important;
+  background-image: none !important;
+  border-bottom: none !important;
+}
+.detail-box{
+  background: #3c464e;
+  min-height: 287px;
+  overflow: hidden;
+  position: relative;
+}
+.detail-header{
+  z-index: 2;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  padding: 20px 5% 0 5%;
+}
+.detail-header h4{
+  color: white !important;
+}
+.player-box{
+  background: #3c464e;
+  min-height: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+.player-card{
+  padding: 10px;
+  background-color: transparent;
+  margin-top: 40px;
+}
+.player-artwork{
+  padding: 20px 40px 0px 40px;
+}
+.player-img-artwork{
+  width: 100%;
+}
+.player-title{
+  text-align: center;
+}
+.player-footer{
+  background-image:transparent;
+  height: 200px !important;
+  background-color: transparent !important;
+}
+.player-time{
+  position: relative;
+  z-index: 2;
+  height: 30px;
+  width: 100%;
+}
+.player-current-time{
+  left:3px;
+  position: absolute;
+  color: white;
+  opacity: .7;
+  bottom: 3px;
+  font-size: 18px;
+  text-shadow: 0 0 1px black;
+}
+.player-total-duration{
+  right:3px;
+  position: absolute;
+  color: white;
+  opacity: .7;
+  bottom: 3px;
+  font-size: 18px;
+  text-shadow: 0 0 1px black;
+}
+.clear-footer{
+  clear: both;
+  display: table-cell;
+  vertical-align: middle;
+}
+.vertical-centering-container{
+  position: relative;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  margin-top: 10px;
+}
+.vertical-centering-content{
+  position: relative;
+  vertical-align: middle;
+  display: table-cell;
+  width: 100%;
+}
+.control-bar{
+  position: relative;
+  width: 100%;
+}
+.control-box{
+  position: relative;
+  margin: auto;
+  height: 40px;
+  width: 180px;
+}
+.play{
+  position: absolute;
+  top: 0;
+  left: 69px;
+}
+.pause{
+  position: absolute;
+  top: 0;
+  left: 72px;
+}
+.play,.play:before{
+  font-size:42px !important;
+  text-shadow: 0 0 1px black;
+  color: white !important;
+  padding-top: 2px;
+}
+.backward{
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 40px;
+  font-size:40px !important;
+  text-shadow: 0 0 1px black;
+  color: white !important;
+}
+.forward{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 40px;
+  font-size:40px !important;
+  text-shadow: 0 0 1px black;
+  color: white !important;
+}
+.loop{
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 25px;
+  color: white;
+  text-shadow: 0 0 1px black;
+}
+.shuffle{
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 25px;
+  color: white;
+  text-shadow: 0 0 1px black;
+}
+.bar.transparent {
+  background-color: transparent;
+  border: none;
+}
+.bar.transparent h1 {
+  color: white;
+}
+.has-no-header {
+  top: 0px !important;
+}
+.has-no-footer {
+  bottom: 0px !important;
+}
+.darktheme {
+  font-family: "Helvetica Neue", "Segoe WP", sans-serif !important;
+  color: white;
+  text-align: center;
+}
+.darktheme h1, .darktheme h2, .darktheme h3, .darktheme h4, .darktheme h5, .darktheme h6 {
+  color: white;
+}
+.player-title h4 , .player-title p {
+  color: white !important;
+}
+.popup-title {
+  color: white !important;
+}
+.popup-sub-title {
+  color: white !important;
+}
+.popover-backdrop.active {
+  background-color: rgba(0,0,0,.4)!important;
+}
+.backdrop {
+  background-color: rgba(0,0,0,.7)!important;
+}
+.popup-container .popup {
+  border-radius: 5PX !important;
+  background-color: #444 !important;
+}
+.popup-head {
+  padding: 15px 10px !important;
+  border-bottom: transparent !important;
+}
+.darktheme .popover {
+  background-color: #212121 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,.4) !important;
+}
+.ion-android-search {
+ font-size: 80px !important;
+}
+.two-line {
+  padding-top: 20px;
+}

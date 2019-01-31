@@ -1,0 +1,37 @@
+<ion-view view-title="Manage Directories">
+    <ion-header-bar class="bar-positive" align-title="center">
+        <div class="buttons">
+            <button class="button button-icon balanced ion-ios-gear" nav-direction="forward" ui-sref="settings"> Settings</button>
+        </div>
+        <h1 class="title">Music folder</h1>
+        <button class="button button-icon balanced ion-android-add" ng-click="openModal()"> Add</button>
+    </ion-header-bar>
+
+
+    <ion-content scroll="true" class="has-header" has-bouncing="true">
+
+        <div style="height: 25px"></div>
+        <ion-list can-swipe="true" delegate-handle="directory-list">
+            <ion-item class="item-icon-left " ng-repeat="directory in directories track by directory.fullPath">
+                <i class="icon ion-folder"></i>
+                <span ng-click="ShowSwipeInfo()">{{directory.fullPath}}</span>
+                <ion-spinner ng-if="directory.isLoading" icon="spiral" class="spinner-energized"></ion-spinner>
+                <ion-option-button class="button-assertive" ng-click="removeDirectory(directory)">
+                    Remove
+                </ion-option-button>
+                <ion-option-button class="button-balanced" ng-click="scanDirectory(directory)">
+                    Scan
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+
+        <div ng-show="!directories.length">
+            <div style="height: 50px"></div>
+            <div class="">
+                <div style="height: 30px"></div>
+                <h4 class="dark">No Folder Selected</h4>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,38 @@
+<ion-view view-title="Settings">
+    <ion-header-bar align-title="center" class="transparent">
+        <div class="buttons">
+            <button class="button icon ion-android-close button-clear button-light" nav-direction="back" ng-click="$ionicGoBack()">
+
+            </button>
+
+        </div>
+    </ion-header-bar>
+
+    <ion-content scroll="false" class="has-no-header">
+        <div style="height: 100px"></div>
+        <div class="list">
+            <ion-toggle ng-model="config.showStatusBar" ng-change="toggleStatusBar()" toggle-class="toggle-balanced">Show
+                Statusbar</ion-toggle>
+            <ion-toggle ng-model="config.goToPlayer" ng-change="toggleGoToPlayer()" toggle-class="toggle-balanced">Go
+                to player on play</ion-toggle>
+            <div class="item item-icon-right" ng-click="findArtistNames()">
+                Update artist names online
+                <ion-spinner ng-show="isSearchingArtists" icon="spiral" class="spinner-energized">></ion-spinner>
+            </div>
+
+            <div class="item item-icon-right" ng-click="findMissingArtworks()">
+                Update album covers online
+                <ion-spinner ng-show="isSearchingArtworks" icon="spiral" class="spinner-energized"></ion-spinner>
+
+            </div>
+
+            <div class="item item-icon-right" ng-click="clearAllDatabase()">
+                Clear all data
+            </div>
+            <div class="item item-icon-right">
+                Version 1.0.0
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,56 @@
+<ion-view view-title="Player">
+    <ion-header-bar align-title="left" class="transparent" id="ben-header">
+        <h1 class="title">{{player.playlist[player.playlistIndex].artist}}</h1>
+        <div class="buttons">
+            <button class="button icon ion-android-close  button-clear button-light" ng-click="$ionicGoBack()"></button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content id="player" scroll="false" class="has-no-header has-no-footer" has-bouncing="true">
+
+        <div id="player-box" class="player-box">
+            <div class="detail-header player-card">
+                <div class="player-artwork">
+                    <img class="player-img-artwork" src="{{player.playlist[player.playlistIndex].cloud ? '' : artworksPath}}{{player.playlist[player.playlistIndex].artwork}}" />
+                </div>
+                <div class="player-title">
+                    <h4>{{player.playlist[player.playlistIndex].name}}</h4>
+                    <p>{{player.playlist[player.playlistIndex].artist}}</p>
+                </div>
+                <div class="buttons">
+                    <button class="button icon like button-clear button-light" ng-click="player.toggleCurrentLike()" ng-class="{'ion-ios-heart': player.playlist[player.playlistIndex].like, 'assertive' : player.playlist[player.playlistIndex].like, 'ion-ios-heart-outline': !player.playlist[player.playlistIndex].like, 'light' : !player.playlist[player.playlistIndex].like}"></button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <ion-footer-bar class="player-footer clear-footer ">
+        <div class="row">
+            <div class="player-time">
+                <span class="player-current-time">{{position | date : 'mm:ss'}}</span>
+                <span class="player-total-duration">{{duration | date : 'mm:ss'}}</span>
+            </div>
+        </div>
+        <div class="range">
+            <input seeker-Slider type="range" name="volume" min="0" max={{duration}} ng-model=position ng-change="stateChanged()" />
+        </div>
+        <div class="vertical-centering-container">
+            <div class="vertical-centering-content">
+                <div class="control-bar">
+                    <div class="control-box">
+                        <button class="button button-icon ion-ios-rewind backward" ng-click="player.prev()"></button>
+                        <button class="button button-icon ion-play play" ng-click="player.play()" ng-show="!player.playing"></button>
+                        <button class="button button-icon ion-pause pause" ng-click="player.pause()" ng-show="player.playing" style="color: #fff !important;"></button>
+                        <button class="button button-icon ion-ios-fastforward forward" ng-click="player.next()"></button>
+                    </div>
+                    <button class="button button-icon loop ion-ios-loop" ng-class="{'ion-ios-loop': !player.loop, 'ion-ios-loop-strong': player.loop, 'pink' : player.loop }"
+                        ng-click="player.toogleLoop()"></button>
+
+                    <button class="button button-icon shuffle ion-ios-shuffle" ng-class="{'ion-ios-shuffle': !player.shuffle, 'ion-ios-shuffle-strong': player.shuffle, 'pink' : player.shuffle }"
+                        ng-click="player.toogleShuffle()"></button>
+                </div>
+            </div>
+        </div>
+    </ion-footer-bar>
+
+</ion-view>

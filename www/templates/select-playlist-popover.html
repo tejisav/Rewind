@@ -1,0 +1,21 @@
+<ion-popover-view style="height : 200px !important">
+    <ion-content has-bouncing="true">
+        <ul class="list popover-list">
+
+            <li ng-repeat="playlist in playlists" class="item popover-item">
+                <button class="button button-clear button-light  popover-button" ng-click="addTitleToPlaylist(playlist.id)">
+                    {{playlist.name}}
+                </button>
+            </li>
+
+        </ul>
+        <div ng-show="!playlists.length">
+
+            <div style="height: 55px"></div>
+            <div class="">
+                <h4 class="dark">No playlist found</h4>
+            </div>
+        </div>
+        </div>
+    </ion-content>
+</ion-popover-view>

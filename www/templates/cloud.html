@@ -1,0 +1,81 @@
+<ion-view view-title="Cloud">
+
+	<ion-header-bar align-title="center" class="bar-positive">
+		<div class="buttons">
+			<button class="button button-icon balanced ion-ios-gear" nav-direction="forward" ui-sref="settings"> Settings</button>
+		</div>
+		<h1 class="title">Cloud</h1>
+		<button class="button button-icon balanced ion-log-out" ng-if="session" ng-click="logout()"> Logout</button>
+	</ion-header-bar>
+
+	<ion-content scroll="true" has-bouncing="true">
+
+		<ion-refresher pulling-text="Pull to refresh" on-refresh="refreshSongs()"></ion-refresher>
+
+		<div ng-if="(!titles.length && session) || !network" class="empty-des text-center padding">
+			<div style="height: 50px"></div>
+			<div class="">
+				<div style="height: 30px"></div>
+				<h4 class="dark">No item found</h4>
+				<h5 class="dark ng-binding">Please upload something first.</h5>
+			</div>
+		</div>
+
+		<div style="height: 25px"></div>
+
+		<div ng-if="!session && network">
+
+			<img src="img/rewind-logo.png" width="75%" />
+
+			<div class="button-bar">
+				<a class="button button-dark" ng-class="{'active': toggleLoginSignup}" ng-click="toggleLogin()">Login</a>
+				<a class="button button-dark" ng-class="{'active': !toggleLoginSignup}" ng-click="toggleSignup()">Signup</a>
+			</div>
+
+			<form ng-if="toggleLoginSignup" class="login-form" ng-submit="login()">
+				<div class="list">
+					<label class="item item-input">
+						<input type="email" placeholder="Email" class="dark" ng-model="login.email">
+					</label>
+					<label class="item item-input">
+						<input type="password" placeholder="Password" class="dark" ng-model="login.password">
+					</label>
+				</div>
+				<button class="button button-block button-dark">Login</button>
+				<div class="assertive" ng-bind-html="loginValidation"></div>
+			</form>
+
+			<form ng-if="!toggleLoginSignup" class="login-form" ng-submit="signup()">
+				<div class="list">
+					<label class="item item-input">
+						<input type="email" placeholder="Email" class="dark" ng-model="signup.email">
+					</label>
+					<label class="item item-input">
+						<input type="password" placeholder="Password" class="dark" ng-model="signup.password">
+					</label>
+					<label class="item item-input">
+						<input type="password" placeholder="Confirm Password" class="dark" ng-model="signup.cpassword">
+					</label>
+				</div>
+				<button class="button button-block button-dark">Create Account</button>
+				<div class="assertive" ng-bind-html="signupValidation"></div>
+			</form>
+
+		</div>
+
+		<div ng-if="titles.length && session && network" class="list">
+			<div collection-repeat="title in titles">
+
+				<div class="item item-song one-line" ng-click="playTitle(title)">
+
+					<img ng-src="{{title.artwork}}" />
+					<h2>{{title.name}}</h2>
+					<button class="button button-icon ion-more" ng-click="showPopover($event,title)"></button>
+				</div>
+			</div>
+		</div>
+
+		<div style="height: 80px"></div>
+
+	</ion-content>
+</ion-view>
